@@ -10,5 +10,9 @@ for entry in question_data:
 quiz = QuizBrain(question_bank)
 # generating new quizbrain object WITH the questions we are using here
 # QuizBrain is a model into which we can plug any kind of questions
-quiz.next_question()
 
+while quiz.still_has_questions():
+    quiz.next_question()
+
+print("You have completed the quiz.")
+print(f"Your final score is: {quiz.score}/{quiz.question_number}")
